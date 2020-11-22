@@ -6,8 +6,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"nodemon backend/server\" \"npm run start --prefix frontend\"",
-    "server": "nodemon backend/server",
-    "heroku-postbuild": "npm run server"
+    "server": "nodemon backend/server"
   },
   "repository": {
     "type": "git",
