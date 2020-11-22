@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"nodemon backend/server\" \"npm run start --prefix frontend\"",
-    "server": "nodemon backend/server"
+    "server": "nodemon backend/server",
+    "start": "node backend/server"
   },
   "repository": {
     "type": "git",
