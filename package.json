@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "concurrently \"nodemon backend/server\" \"npm run start --prefix frontend\"",
     "server": "nodemon backend/server",
-    "start": "node backend/server"
+    "start": "node backend/server",
+    "commitNeutral": "git add . && git commit -m 'automated commit' && git push origin master"
   },
   "repository": {
     "type": "git",
