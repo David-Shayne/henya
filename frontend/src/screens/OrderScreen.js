@@ -9,9 +9,10 @@ import PayFastForm from '../components/PayFastForm';
 import moment from 'moment';
 import axios from 'axios';
 
-const OrderScreen = ({ history, match }) => {
+const OrderScreen = ({ history, match, location }) => {
   document.title = 'Henya - Order Details';
   const orderID = match.params.id;
+  const status = location.search ? String(location.search.split('=')[1]) : null;
   const dispatch = useDispatch();
 
   const { userInfo } = useSelector((store) => store.userLogin);
@@ -50,6 +51,12 @@ const OrderScreen = ({ history, match }) => {
     <Message text={error} variant='danger' />
   ) : (
     <>
+      {status && (
+        <Message
+          text={`Payment ${status.toUpperCase()}`}
+          variant={status == 'success' ? 'success' : 'danger'}
+        />
+      )}
       <h1 className='py-3'>
         Order: <i>{order._id}</i>
       </h1>

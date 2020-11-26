@@ -6,14 +6,13 @@ const PayFastForm = () => {
   const { totalPrice, user, _id, isPaid } = useSelector(
     (store) => store.order.order
   );
-  const URL = 'https://www.google.com' || window.location.href;
-  const hostUrl = 'http://34ed81308d81.ngrok.io';
+  const hostUrl = 'http://henya-online.herokuapp.com';
 
   const merchant_id = '10020426';
   const merchant_key = 'yvg22xx4030gz';
   const item_name = `Henya Order ID: ${_id}`;
-  const return_url = URL;
-  const cancel_url = URL;
+  const return_url = `${hostUrl}/orders/${_id}?status=success`;
+  const cancel_url = `${hostUrl}/orders/${_id}?status=cancelled`;
   const notify_url = `${hostUrl}/api/orders/${_id}/pay`;
   const name_first = user.name;
   const email_address = user.email;
