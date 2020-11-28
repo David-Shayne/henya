@@ -36,11 +36,11 @@ const ProfileScreen = ({ history }) => {
       }
     } else {
       //Redirects to login page
-      history.push('/#/login?redirect=profile');
+      history.push('/login?redirect=profile');
     }
 
     if (userInfo.isGuest) {
-      history.push('/#/');
+      history.push('/');
     }
   }, [history, userInfo, dispatch]);
 
@@ -72,7 +72,7 @@ const ProfileScreen = ({ history }) => {
   });
 
   const detailsHandler = (order) => {
-    history.push(`/#/orders/${order._id}`);
+    history.push(`/orders/${order._id}`);
   };
   return (
     <Row className='my-3'>

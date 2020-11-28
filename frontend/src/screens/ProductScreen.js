@@ -36,7 +36,7 @@ function ProductScreen({ history, match }) {
   });
 
   const addToCartHandler = () => {
-    history.push(`/#/cart/${match.params.id}?quantity=${quantity}`);
+    history.push(`/cart/${match.params.id}?quantity=${quantity}`);
   };
   const inStock = product.countInStock > 0;
   return (

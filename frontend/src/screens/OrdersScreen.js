@@ -34,7 +34,7 @@ const OrdersScreen = ({ history }) => {
   }, [userInfo]);
 
   const detailsHandler = (order) => {
-    history.push(`/#/orders/${order._id}`);
+    history.push(`/orders/${order._id}`);
   };
 
   return error ? (
