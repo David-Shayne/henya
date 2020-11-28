@@ -36,12 +36,12 @@ function ProductScreen({ history, match }) {
   });
 
   const addToCartHandler = () => {
-    history.push(`/cart/${match.params.id}?quantity=${quantity}`);
+    history.push(`/#/cart/${match.params.id}?quantity=${quantity}`);
   };
   const inStock = product.countInStock > 0;
   return (
     <div>
-      <LinkContainer to='/'>
+      <LinkContainer to='/#/'>
         <Button className='btn my-3 bg-transparent'>Go Back</Button>
       </LinkContainer>
       {isLoading ? (

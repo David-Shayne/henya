@@ -67,7 +67,7 @@ const UserEditScreen = ({ location, history, match }) => {
   };
   return (
     <>
-      <Link to='/admin/users' className='btn'>
+      <Link to='/#/admin/users' className='btn'>
         Go Back
       </Link>
       <FormContainer>

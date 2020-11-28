@@ -19,13 +19,13 @@ const OrderAddScreen = ({ history }) => {
 
   useEffect(() => {
     if (!userInfo) {
-      history.push('/');
+      history.push('/#/');
     }
   }, [userInfo, cartItems, history]);
 
   useEffect(() => {
     if (success && !cartItems[0]) {
-      history.push(`/orders/${order._id}`);
+      history.push(`/#/orders/${order._id}`);
     }
   }, [history, success, order, cartItems]);
 

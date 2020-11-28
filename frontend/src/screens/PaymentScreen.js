@@ -11,14 +11,14 @@ const PaymentScreen = ({ history }) => {
   const { shipping } = useSelector((store) => store.cart);
 
   if (!shipping.address) {
-    history.push('/shipping');
+    history.push('/#/shipping');
   }
   const [paymentMethod, setPaymentMethod] = useState('payfast');
 
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(savePaymentMethod(paymentMethod));
-    history.push('/order');
+    history.push('/#/order');
   };
   return (
     <>

@@ -23,7 +23,7 @@ const ShippingScreen = ({ history }) => {
       dispatch(saveShipping({ address, postalCode }));
     }
 
-    history.push('/payment');
+    history.push('/#/payment');
   };
   return (
     <>

@@ -32,7 +32,7 @@ function Header({ history }) {
         className='henya-darkest'
       >
         <Container>
-          <LinkContainer to='/'>
+          <LinkContainer to='/#/'>
             <Navbar.Brand>
               <Image src='/images/logo.svg' style={{ width: '5rem' }} />
             </Navbar.Brand>
@@ -40,13 +40,13 @@ function Header({ history }) {
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ml-auto'>
-              <LinkContainer to='/about'>
+              <LinkContainer to='/#/about'>
                 <Nav.Link>About</Nav.Link>
               </LinkContainer>
-              <LinkContainer to='/contact' style={{ marginRight: '1rem' }}>
+              <LinkContainer to='/#/contact' style={{ marginRight: '1rem' }}>
                 <Nav.Link>Contact</Nav.Link>
               </LinkContainer>
-              <LinkContainer to='/cart' className='cart-link-container'>
+              <LinkContainer to='/#/cart' className='cart-link-container'>
                 <Nav.Link>
                   {cartItems.length > 0 ? (
                     <Badge pill variant='light' className='cart-pill'>
@@ -61,7 +61,7 @@ function Header({ history }) {
                 <>
                   <NavDropdown title={userInfo.name} id='username'>
                     {!userInfo.isGuest ? (
-                      <LinkContainer to='/profile'>
+                      <LinkContainer to='/#/profile'>
                         <NavDropdown.Item>Profile</NavDropdown.Item>
                       </LinkContainer>
                     ) : null}
@@ -72,20 +72,20 @@ function Header({ history }) {
                   </NavDropdown>{' '}
                   {userInfo && userInfo.isAdmin && (
                     <NavDropdown title='Admin' id='adminmenu'>
-                      <LinkContainer to='/admin/users'>
+                      <LinkContainer to='/#/admin/users'>
                         <NavDropdown.Item>User List</NavDropdown.Item>
                       </LinkContainer>
-                      <LinkContainer to='/admin/products'>
+                      <LinkContainer to='/#/admin/products'>
                         <NavDropdown.Item>Product List</NavDropdown.Item>
                       </LinkContainer>
-                      <LinkContainer to='/admin/orders'>
+                      <LinkContainer to='/#/admin/orders'>
                         <NavDropdown.Item>Orders List</NavDropdown.Item>
                       </LinkContainer>
                     </NavDropdown>
                   )}
                 </>
               ) : (
-                <LinkContainer to='/login'>
+                <LinkContainer to='/#/login'>
                   <Nav.Link>
                     <i className='fas fa-user'></i> Sign in
                   </Nav.Link>

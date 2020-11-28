@@ -39,7 +39,7 @@ const CartItemsList = ({ order, orderItems }) => {
               </Col>
 
               <Col md={4}>
-                <Link to={`/product/${item._id}`}>
+                <Link to={`/#/product/${item._id}`}>
                   <h5 className='m-0'>{item.name}</h5>
                 </Link>
               </Col>
@@ -87,7 +87,7 @@ const CartItemsList = ({ order, orderItems }) => {
                   </Col>
                   {!orderItems && (
                     <Col md={2} style={{ textAlign: 'right' }}>
-                      <Link to='/cart'>Edit</Link>
+                      <Link to='/#/cart'>Edit</Link>
                     </Col>
                   )}
                 </>
@@ -97,7 +97,7 @@ const CartItemsList = ({ order, orderItems }) => {
         ))
       ) : (
         <Message>
-          No items in cart {'>'} <Link to='/'>Browse</Link>
+          No items in cart {'>'} <Link to='/#/'>Browse</Link>
         </Message>
       )}
     </ListGroup>

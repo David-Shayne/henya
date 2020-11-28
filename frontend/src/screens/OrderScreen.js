@@ -23,7 +23,7 @@ const OrderScreen = ({ history, match, location }) => {
       dispatch(getOrder(orderID));
     }
     if (!userInfo) {
-      history.push(`/login?redirect=${window.location.pathname}`);
+      history.push(`/#/login?redirect=${window.location.pathname}`);
     }
   }, [dispatch, orderID, order, userInfo, history]);
 

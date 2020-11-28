@@ -82,7 +82,7 @@ const UsersScreen = () => {
               </td>
 
               <td className='text-center'>
-                <LinkContainer to={`/admin/user/${user._id}/edit`}>
+                <LinkContainer to={`/#/admin/user/${user._id}/edit`}>
                   <Button className='henya-dark'>
                     <i className='fas fa-edit' />
                   </Button>

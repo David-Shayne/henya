@@ -14,8 +14,8 @@ const Product = ({ product }) => {
   return (
     <Card key={product._id} className='product my-3 p-3 rounded'>
       <div className='landing-product'>
-        <Link to={`/product/${product._id}`}>
-          <Carousel interval={Math.random() * 15000 * Math.random()}>
+        <Link to={`/#/product/${product._id}`}>
+          <Carousel>
             {product.image.map((imageSrc) => (
               <Carousel.Item>
                 <Image
@@ -30,7 +30,7 @@ const Product = ({ product }) => {
       </div>
 
       <Card.Body>
-        <Link to={`/product/${product._id}`}>
+        <Link to={`/#/product/${product._id}`}>
           <Card.Title as='div'>
             <strong>{product.name}</strong>
           </Card.Title>
