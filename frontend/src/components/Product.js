@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Carousel, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Rating from './Rating';
 
@@ -15,7 +15,17 @@ const Product = ({ product }) => {
     <Card key={product._id} className='product my-3 p-3 rounded'>
       <div className='landing-product'>
         <Link to={`/product/${product._id}`}>
-          <Card.Img variant='top' src={product.image[0]} />
+          <Carousel interval={Math.random() * 15000 * Math.random()}>
+            {product.image.map((imageSrc) => (
+              <Carousel.Item>
+                <Image
+                  variant='top'
+                  src={imageSrc}
+                  style={{ height: '10rem' }}
+                />
+              </Carousel.Item>
+            ))}
+          </Carousel>
         </Link>
       </div>
 

@@ -14,7 +14,7 @@ const cartItemsFromStorage = localStorage.getItem('cartItems')
 //Sets shipping data to last shipping from browser if available
 const shippingFromStorage = localStorage.getItem('shipping')
   ? JSON.parse(localStorage.getItem('shipping'))
-  : { address: '', postalCode: '' };
+  : { address: '', postalCode: '', email: '' };
 
 //Sets payment method to last method from browser if available
 const paymentMethodFromStorage = localStorage.getItem('paymentMethod')

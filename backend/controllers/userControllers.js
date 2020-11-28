@@ -16,7 +16,8 @@ export const authUser = asyncHandler(async (req, res) => {
       name: user.name,
       email: user.email,
       isAdmin: user.isAdmin,
-      token: generateToken(user._id)
+      token: generateToken(user._id),
+      isGuest: user.isGuest
     });
   } else {
     //Returns 401 when incorrect credentials entered
@@ -71,7 +72,8 @@ export const getUserProfile = asyncHandler(async (req, res) => {
       _id: user._id,
       name: user.name,
       email: user.email,
-      isAdmin: user.isAdmin
+      isAdmin: user.isAdmin,
+      isGuest: user.isGuest
     });
   } else {
     res.status(404);

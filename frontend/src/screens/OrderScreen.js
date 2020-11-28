@@ -73,7 +73,13 @@ const OrderScreen = ({ history, match, location }) => {
               <p>
                 <strong>Email: </strong>
                 <i>
-                  <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
+                  <a
+                    href={`mailto:${
+                      order.user.isGuest ? order.email : order.user.email
+                    }`}
+                  >
+                    {order.user.isGuest ? order.email : order.user.email}
+                  </a>
                 </i>
               </p>
               {order.shipping.address === 'collect' ? (

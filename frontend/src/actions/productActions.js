@@ -12,7 +12,8 @@ export const fetchProducts = () => async (dispatch) => {
   try {
     //fetch requested
     dispatch({
-      type: PRODUCTS_REQUEST
+      type: PRODUCTS_REQUEST,
+      payload: null
     });
 
     //fetch all products

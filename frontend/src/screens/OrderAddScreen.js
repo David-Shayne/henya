@@ -46,16 +46,31 @@ const OrderAddScreen = ({ history }) => {
   const totalPrice = shippingPrice + itemsPrice;
 
   const placeOrderHandler = () => {
-    dispatch(
-      createOrder({
-        orderItems: cartItems,
-        shipping,
-        paymentMethod,
-        itemsPrice,
-        shippingPrice,
-        totalPrice
-      })
-    );
+    if (shipping.email) {
+      dispatch(
+        createOrder({
+          orderItems: cartItems,
+          shipping,
+          paymentMethod,
+          itemsPrice,
+          shippingPrice,
+          totalPrice,
+          email: shipping.email
+        })
+      );
+    } else {
+      dispatch(
+        createOrder({
+          orderItems: cartItems,
+          shipping,
+          paymentMethod,
+          itemsPrice,
+          shippingPrice,
+          totalPrice
+        })
+      );
+    }
+
     dispatch(removeAllFromCart());
   };
   return (

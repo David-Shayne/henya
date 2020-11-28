@@ -8,8 +8,8 @@ const PayFastForm = () => {
   );
   const hostUrl = 'https://henya-online.herokuapp.com';
 
-  const merchant_id = '10020426';
-  const merchant_key = 'yvg22xx4030gz';
+  const merchant_id = '16634696';
+  const merchant_key = 'wkl2i3dvpx4b6';
   const item_name = `Henya Order ID: ${_id}`;
   const return_url = `${hostUrl}/#/orders/${_id}?status=success`;
   const cancel_url = `${hostUrl}/#/orders/${_id}?status=cancelled`;
@@ -32,7 +32,7 @@ const PayFastForm = () => {
     m_payment_id
   });
 
-  const redirect = `https://sandbox.payfast.co.za​/eng/process?${params.toString()}`;
+  const redirect = `https://www.payfast.co.za/eng/process?${params.toString()}`;
 
   const submitHandler = () => {
     window.location.replace(redirect);

@@ -66,6 +66,7 @@ const LoginScreen = ({ location, history }) => {
           Sign In
         </Button>
       </Form>
+
       <Row className='py-3'>
         <Col>
           <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
@@ -73,6 +74,15 @@ const LoginScreen = ({ location, history }) => {
           </Link>
         </Col>
       </Row>
+      <span style={{ marginRight: '1rem' }}>Or</span>
+      <Button
+        type='submit'
+        variant='primary'
+        className='mb-3'
+        onClick={() => dispatch(login('guest@henya.org', 'guest123'))}
+      >
+        Continue as guest
+      </Button>
     </FormContainer>
   );
 };

@@ -28,13 +28,14 @@ const GenerateStars = (value, color, numOfStars) => {
 
 const Rating = ({ value, numReviews, color, newLine, numOfStars }) => {
   return (
-    <div className={`rating my-3`} key={uuid()}>
-      <span className={newLine ? '' : 'mr-2'}>
-        {GenerateStars(value, color, numOfStars)}
-      </span>
-      <br hidden={!newLine} />
-      {numReviews ? <span>{numReviews} reviews</span> : ''}
-    </div>
+    // <div className={`rating my-3`} key={uuid()}>
+    //   <span className={newLine ? '' : 'mr-2'}>
+    //     {GenerateStars(value, color, numOfStars)}
+    //   </span>
+    //   <br hidden={!newLine} />
+    //   {numReviews ? <span>{numReviews} reviews</span> : ''}
+    // </div>
+    <></>
   );
 };
 

@@ -9,13 +9,20 @@ const ShippingScreen = ({ history }) => {
   document.title = 'Henya - Shipping';
   const dispatch = useDispatch();
   const { shipping } = useSelector((store) => store.cart);
+  const { userInfo } = useSelector((store) => store.userLogin);
 
   const [address, setAddress] = useState(shipping.address);
   const [postalCode, setPostalCode] = useState(shipping.postalCode);
+  const [email, setEmail] = useState();
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(saveShipping({ address, postalCode }));
+    if (userInfo.isGuest) {
+      dispatch(saveShipping({ address, postalCode, email }));
+    } else {
+      dispatch(saveShipping({ address, postalCode }));
+    }
+
     history.push('/payment');
   };
   return (
@@ -27,6 +34,7 @@ const ShippingScreen = ({ history }) => {
           <Form.Group controlId='address'>
             <Form.Label>Address</Form.Label>
             <Form.Control
+              required
               type='text'
               placeholder='Enter address'
               value={address}
@@ -39,6 +47,7 @@ const ShippingScreen = ({ history }) => {
           <Form.Group controlId='postalCode'>
             <Form.Label>Postal code</Form.Label>
             <Form.Control
+              required
               type='text'
               placeholder='Enter postal code'
               value={postalCode}
@@ -64,6 +73,20 @@ const ShippingScreen = ({ history }) => {
               }}
             />
           </Form.Group>
+          {userInfo.isGuest && (
+            <Form.Group controlId='email'>
+              <Form.Label>Email for guest order</Form.Label>
+              <Form.Control
+                required
+                type='email'
+                placeholder='Enter your email'
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+            </Form.Group>
+          )}
           <Button type='submit' variant='primary' className='mt-1 henya-dark'>
             Continue to payment
           </Button>

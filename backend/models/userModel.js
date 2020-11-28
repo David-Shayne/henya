@@ -3,6 +3,11 @@ import bcrypt from 'bcryptjs';
 
 const userSchema = mongoose.Schema(
   {
+    isGuest: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
     name: {
       type: String,
       required: true

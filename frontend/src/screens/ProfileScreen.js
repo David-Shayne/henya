@@ -38,6 +38,10 @@ const ProfileScreen = ({ history }) => {
       //Redirects to login page
       history.push('/login?redirect=profile');
     }
+
+    if (userInfo.isGuest) {
+      history.push('/');
+    }
   }, [history, userInfo, dispatch]);
 
   useEffect(() => {

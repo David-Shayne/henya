@@ -19,15 +19,30 @@ export const addOrder = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error('No order items');
   } else {
-    const order = new Order({
-      user: req.user._id,
-      orderItems,
-      shipping,
-      paymentMethod,
-      itemsPrice,
-      shippingPrice,
-      totalPrice
-    });
+    let order;
+
+    if (req.body.email) {
+      order = new Order({
+        user: req.user._id,
+        orderItems,
+        shipping,
+        paymentMethod,
+        itemsPrice,
+        shippingPrice,
+        totalPrice,
+        email: req.body.email
+      });
+    } else {
+      order = new Order({
+        user: req.user._id,
+        orderItems,
+        shipping,
+        paymentMethod,
+        itemsPrice,
+        shippingPrice,
+        totalPrice
+      });
+    }
 
     const createdOrder = await order.save();
     res.status(201).json(createdOrder);
@@ -41,7 +56,7 @@ export const getOrder = asyncHandler(async (req, res) => {
   try {
     const order = await Order.findById(req.params.id).populate(
       'user',
-      'name email'
+      'name email isGuest'
     );
 
     res.json(order);

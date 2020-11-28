@@ -1,7 +1,9 @@
 main {
   min-height: 80vh;
 }
-
+* {
+  font-family: 'Abhaya Libre', serif;
+}
 //Spacing for stars -- removing left margin on first star
 .rating span {
   margin: 0.1rem;
@@ -34,10 +36,11 @@ h2 {
 *:root {
   --henya-primary: #a2dac0;
   /* --henya-dark: #692850; */
-  --henya-dark: #347e5b;
+  // --henya-dark: #347e5b;
+  --henya-dark: #539476;
   /* --henya-dark: #236948; */
 
-  --henya-darkest: #12462e;
+  --henya-darkest: #539476;
 }
 
 .henya-primary {

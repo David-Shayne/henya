@@ -1,5 +1,12 @@
 import React from 'react';
-import { Navbar, Nav, Container, Badge, NavDropdown } from 'react-bootstrap';
+import {
+  Navbar,
+  Nav,
+  Container,
+  Badge,
+  NavDropdown,
+  Image
+} from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../actions/userActions';
@@ -26,11 +33,19 @@ function Header({ history }) {
       >
         <Container>
           <LinkContainer to='/'>
-            <Navbar.Brand>Henya</Navbar.Brand>
+            <Navbar.Brand>
+              <Image src='/images/logo.svg' style={{ width: '5rem' }} />
+            </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ml-auto'>
+              <LinkContainer to='/about'>
+                <Nav.Link>About</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/contact' style={{ marginRight: '1rem' }}>
+                <Nav.Link>Contact</Nav.Link>
+              </LinkContainer>
               <LinkContainer to='/cart' className='cart-link-container'>
                 <Nav.Link>
                   {cartItems.length > 0 ? (
@@ -45,9 +60,11 @@ function Header({ history }) {
               {userInfo ? (
                 <>
                   <NavDropdown title={userInfo.name} id='username'>
-                    <LinkContainer to='/profile'>
-                      <NavDropdown.Item>Profile</NavDropdown.Item>
-                    </LinkContainer>
+                    {!userInfo.isGuest ? (
+                      <LinkContainer to='/profile'>
+                        <NavDropdown.Item>Profile</NavDropdown.Item>
+                      </LinkContainer>
+                    ) : null}
 
                     <NavDropdown.Item onClick={logoutHandler}>
                       Logout

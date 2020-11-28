@@ -21,6 +21,8 @@ import Products from './screens/ProductsScreen';
 import ProductEdit from './screens/ProductEditScreen';
 import ProductCreate from './screens/ProductCreateScreen';
 import Orders from './screens/OrdersScreen';
+import About from './screens/About';
+import Contact from './screens/Contact';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
       <main className='py-3'>
         <Container>
           <Route path='/' component={HomeScreen} exact />
+          <Route path='/about' component={About} />
+          <Route path='/contact' component={Contact} />
           <Route path='/product/:id' component={Product} />
           <Route path='/cart/:id?' component={Cart} />
           <Route path='/register' component={Register} />
