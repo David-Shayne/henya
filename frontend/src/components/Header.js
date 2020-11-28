@@ -19,7 +19,7 @@ function Header({ history }) {
 
   const logoutHandler = () => {
     dispatch(logout());
-    window.location.pathname = '/login';
+    history.push('/login');
   };
 
   return (
