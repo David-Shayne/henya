@@ -15,7 +15,7 @@ const Product = ({ product }) => {
     <Card key={product._id} className='product my-3 p-3 rounded'>
       <div className='landing-product'>
         <Link to={`/product/${product._id}`}>
-          <Carousel interval={false}>
+          <Carousel interval={1000000}>
             {product.image.map((imageSrc) => (
               <Carousel.Item>
                 <Image
