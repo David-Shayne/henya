@@ -4,10 +4,10 @@ import { Nav } from 'react-bootstrap';
 
 const CheckoutSteps = ({ onStep }) => {
   let steps = [
-    { name: 'Cart', link: '/#/cart' },
-    { name: 'Shipping', link: '/#/shipping' },
-    { name: 'Payment', link: '/#/payment' },
-    { name: 'Place Order', link: '/#/order' }
+    { name: 'Cart', link: '/cart' },
+    { name: 'Shipping', link: '/shipping' },
+    { name: 'Payment', link: '/payment' },
+    { name: 'Place Order', link: '/order' }
   ];
 
   return (

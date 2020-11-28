@@ -87,7 +87,7 @@ const ProductEditScreen = ({ location, history, match }) => {
   };
   return (
     <>
-      <Link to='/#/admin/products' className='btn'>
+      <Link to='/admin/products' className='btn'>
         Go Back
       </Link>
       <FormContainer>

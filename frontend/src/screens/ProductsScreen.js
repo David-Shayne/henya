@@ -56,7 +56,7 @@ const ProductsScreen = ({ location }) => {
       </h1>
 
       <LinkContainer
-        to={`/#/admin/product/create`}
+        to={`/admin/product/create`}
         style={{ marginBottom: '1rem' }}
       >
         <Button className='henya-dark'>
@@ -104,7 +104,7 @@ const ProductsScreen = ({ location }) => {
               <td className='text-center'>{currency.format(product.price)}</td>
               <td className='text-center'>{product.countInStock}</td>
               <td className='text-center'>
-                <LinkContainer to={`/#/admin/product/${product._id}/edit`}>
+                <LinkContainer to={`/admin/product/${product._id}/edit`}>
                   <Button className='henya-dark'>
                     <i className='fas fa-edit' />
                   </Button>
