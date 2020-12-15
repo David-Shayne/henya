@@ -41,8 +41,11 @@ const OrderAddScreen = ({ history }) => {
       return total + item.quantity * item.price;
     }, 0)
   );
-  const shippingPrice =
-    shipping.address === 'collect' ? 0 : itemsPrice <= 1000 ? 150 : 0;
+  const shippingPrice = shipping.isFree
+    ? 0
+    : shipping.address === 'collect'
+    ? 0
+    : 50;
   const totalPrice = shippingPrice + itemsPrice;
 
   const placeOrderHandler = () => {

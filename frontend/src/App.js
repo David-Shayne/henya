@@ -23,6 +23,7 @@ import ProductCreate from './screens/ProductCreateScreen';
 import Orders from './screens/OrdersScreen';
 import About from './screens/About';
 import Contact from './screens/Contact';
+import ProductCarousel from './screens/ProductCarouselScreen';
 
 function App() {
   return (
@@ -30,7 +31,8 @@ function App() {
       <Header />
       <main className='py-3'>
         <Container>
-          <Route path='/' component={HomeScreen} exact />
+          <Route path='/' component={ProductCarousel} exact />
+          <Route path='/products' component={HomeScreen} exact />
           <Route path='/about' component={About} />
           <Route path='/contact' component={Contact} />
           <Route path='/product/:id' component={Product} />

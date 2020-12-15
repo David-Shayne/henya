@@ -14,13 +14,14 @@ const ShippingScreen = ({ history }) => {
   const [address, setAddress] = useState(shipping.address);
   const [postalCode, setPostalCode] = useState(shipping.postalCode);
   const [email, setEmail] = useState();
+  const [isFree, setIsFree] = useState(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
     if (userInfo.isGuest) {
-      dispatch(saveShipping({ address, postalCode, email }));
+      dispatch(saveShipping({ address, postalCode, email, isFree }));
     } else {
-      dispatch(saveShipping({ address, postalCode }));
+      dispatch(saveShipping({ address, postalCode, isFree }));
     }
 
     history.push('/payment');
@@ -43,7 +44,6 @@ const ShippingScreen = ({ history }) => {
               }}
             />
           </Form.Group>
-
           <Form.Group controlId='postalCode'>
             <Form.Label>Postal code</Form.Label>
             <Form.Control
@@ -56,23 +56,21 @@ const ShippingScreen = ({ history }) => {
               }}
             />
           </Form.Group>
-          <p
-            className='my-3'
-            style={{ color: 'black', opacity: '0.8', fontSize: '1.2rem' }}
-          >
-            OR
+          <p>
+            Free delivery to CBD & Northern Suburbs. R50 delivery fee for
+            southern suburbs. Wholesale delivery to cafes is Free.
           </p>
           <Form.Group controlId='collect'>
             <Form.Check
               type='checkbox'
-              value='collect'
-              label='Collect?'
+              value='freeDelivery'
+              label='Qualify for free delivery? Click Here'
               onChange={(e) => {
-                setAddress(e.target.value);
-                setPostalCode('0000');
+                setIsFree(true);
               }}
             />
           </Form.Group>
+
           {userInfo.isGuest && (
             <Form.Group controlId='email'>
               <Form.Label>Email for guest order</Form.Label>

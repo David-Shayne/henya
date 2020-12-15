@@ -29,17 +29,20 @@ function Header({ history }) {
         bg='dark'
         expand='lg'
         collapseOnSelect
-        className='henya-darkest'
+        className='henya-header'
       >
         <Container>
           <LinkContainer to='/'>
             <Navbar.Brand>
-              <Image src='/images/logo.svg' style={{ width: '5rem' }} />
+              <Image src='/images/logo.svg' style={{ width: '7rem' }} />
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ml-auto'>
+              <LinkContainer to='/products'>
+                <Nav.Link>Latest Products</Nav.Link>
+              </LinkContainer>
               <LinkContainer to='/about'>
                 <Nav.Link>About</Nav.Link>
               </LinkContainer>

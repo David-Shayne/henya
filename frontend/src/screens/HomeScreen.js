@@ -30,7 +30,7 @@ function HomeScreen({ match }) {
           {products
             ? products.map((product) => (
                 <Col sm={12} md={6} lg={3} xl={3} key={product._id}>
-                  <Product product={product} />
+                  <Product product={product} carouselItem={false} />
                 </Col>
               ))
             : null}

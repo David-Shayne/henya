@@ -1,27 +1,35 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7e0178d60066c757b5a04a40fb77693d",
+    "revision": "46bb1fc508420e446e761725481486fc",
     "url": "/index.html"
   },
   {
-    "revision": "c2220b0eb9b65e890338",
-    "url": "/static/css/main.9f46fa73.chunk.css"
+    "revision": "85875a147fda42464e7d",
+    "url": "/static/css/main.5da05759.chunk.css"
   },
   {
-    "revision": "b02be37c4fe8674fd3ec",
-    "url": "/static/js/2.e8de2582.chunk.js"
+    "revision": "9ac934db3f79ceaa9592",
+    "url": "/static/js/2.4f33af4d.chunk.js"
   },
   {
     "revision": "e4f6fd5e687738d725e56603861f1923",
-    "url": "/static/js/2.e8de2582.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.4f33af4d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c2220b0eb9b65e890338",
-    "url": "/static/js/main.c712616a.chunk.js"
+    "revision": "85875a147fda42464e7d",
+    "url": "/static/js/main.34292ecf.chunk.js"
   },
   {
     "revision": "d8dc760d3a33016bdc42",
     "url": "/static/js/runtime-main.8f8e8f83.js"
+  },
+  {
+    "revision": "8ddac50caed418f66b3bb7e9a7699c78",
+    "url": "/static/media/LinetoBrown.8ddac50c.woff2"
+  },
+  {
+    "revision": "b0f945fc7b2d31a73e1693ca87ee9be5",
+    "url": "/static/media/MADEGentle.b0f945fc.otf"
   },
   {
     "revision": "674f50d287a8c48dc19ba404d20fe713",

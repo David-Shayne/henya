@@ -3,7 +3,7 @@ import { Card, Carousel, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Rating from './Rating';
 
-const Product = ({ product }) => {
+const Product = ({ product, carouselItem }) => {
   const currency = new Intl.NumberFormat('en-ZA', {
     style: 'currency',
     currency: 'ZAR',
@@ -12,37 +12,38 @@ const Product = ({ product }) => {
   });
 
   return (
-    <Card key={product._id} className='product my-3 p-3 rounded'>
+    <Card key={product._id} className='product my-3 p-3 rounded border-0'>
       <div className='landing-product'>
         <Link to={`/product/${product._id}`}>
-          <Carousel interval={1000000}>
-            {product.image.map((imageSrc) => (
-              <Carousel.Item>
-                <Image
-                  variant='top'
-                  src={imageSrc}
-                  style={{ height: '10rem' }}
-                />
-              </Carousel.Item>
-            ))}
-          </Carousel>
+          {carouselItem ? (
+            <Card.Img
+              variant='top'
+              src={product.image[0]}
+              style={{ height: '40vh' }}
+            />
+          ) : (
+            <Carousel interval={1000000}>
+              {product.image.map((imageSrc) => (
+                <Carousel.Item>
+                  <Image src={imageSrc} style={{ height: '10rem' }} />
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          )}
         </Link>
       </div>
 
-      <Card.Body>
+      <Card.Body className={carouselItem && 'carouselBodyProduct'}>
         <Link to={`/product/${product._id}`}>
           <Card.Title as='div'>
-            <strong>{product.name}</strong>
+            <strong style={{ color: carouselItem ? 'white' : 'black' }}>
+              {product.name}
+            </strong>
           </Card.Title>
         </Link>
-        <Card.Text as='div'>
-          <Rating
-            value={product.rating}
-            numReviews={product.numReviews}
-            key={product._id}
-          />
+        <Card.Text as='h3' style={{ color: carouselItem ? 'white' : 'black' }}>
+          {currency.format(product.price)}
         </Card.Text>
-        <Card.Text as='h3'>{currency.format(product.price)}</Card.Text>
       </Card.Body>
     </Card>
   );

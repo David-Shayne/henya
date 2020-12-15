@@ -1,8 +1,16 @@
+@font-face {
+  font-family: LinetoBrown;
+  src: url(./fonts/LinetoBrown.woff2);
+}
+@font-face {
+  font-family: MADEGentle;
+  src: url(./fonts/MADEGentle.otf);
+}
 main {
   min-height: 80vh;
 }
 * {
-  font-family: 'Abhaya Libre', serif;
+  font-family: 'LinetoBrown', serif;
 }
 //Spacing for stars -- removing left margin on first star
 .rating span {
@@ -41,6 +49,8 @@ h2 {
   /* --henya-dark: #236948; */
 
   --henya-darkest: #539476;
+
+  --henya-header: #608b62;
 }
 
 .henya-primary {
@@ -53,6 +63,10 @@ h2 {
 }
 .henya-darkest {
   background-color: var(--henya-darkest) !important;
+  color: white !important;
+}
+.henya-header {
+  background-color: var(--henya-header) !important;
   color: white !important;
 }
 
@@ -101,4 +115,9 @@ h2 {
 
 th {
   font-weight: bold;
+}
+
+.carouselBodyProduct {
+  background: rgba(0, 0, 0, 0.431);
+  margin-bottom: 1rem;
 }
