@@ -15,35 +15,23 @@ const Product = ({ product, carouselItem }) => {
     <Card key={product._id} className='product my-3 p-3 rounded border-0'>
       <div className='landing-product'>
         <Link to={`/product/${product._id}`}>
-          {carouselItem ? (
-            <Card.Img
-              variant='top'
-              src={product.image[0]}
-              style={{ height: '40vh' }}
-            />
-          ) : (
-            <Carousel interval={1000000}>
-              {product.image.map((imageSrc) => (
-                <Carousel.Item>
-                  <Image src={imageSrc} style={{ height: '10rem' }} />
-                </Carousel.Item>
-              ))}
-            </Carousel>
-          )}
+          <Carousel interval={1000000}>
+            {product.image.map((imageSrc) => (
+              <Carousel.Item>
+                <Image src={imageSrc} style={{ height: '10rem' }} />
+              </Carousel.Item>
+            ))}
+          </Carousel>
         </Link>
       </div>
 
-      <Card.Body className={carouselItem && 'carouselBodyProduct'}>
+      <Card.Body>
         <Link to={`/product/${product._id}`}>
           <Card.Title as='div'>
-            <strong style={{ color: carouselItem ? 'white' : 'black' }}>
-              {product.name}
-            </strong>
+            <strong>{product.name}</strong>
           </Card.Title>
         </Link>
-        <Card.Text as='h3' style={{ color: carouselItem ? 'white' : 'black' }}>
-          {currency.format(product.price)}
-        </Card.Text>
+        <Card.Text as='h3'>{currency.format(product.price)}</Card.Text>
       </Card.Body>
     </Card>
   );
