@@ -6,7 +6,7 @@ const PayFastForm = () => {
   const { totalPrice, user, _id, isPaid } = useSelector(
     (store) => store.order.order
   );
-  const hostUrl = 'https://henya-online.herokuapp.com';
+  const hostUrl = 'http://www.henya.co.za';
 
   const merchant_id = '16634696';
   const merchant_key = 'wkl2i3dvpx4b6';
