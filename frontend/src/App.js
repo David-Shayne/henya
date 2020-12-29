@@ -27,33 +27,43 @@ import ProductCarousel from './screens/ProductCarouselScreen';
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <main className='py-3'>
-        <Container>
-          <Route path='/' component={ProductCarousel} exact />
-          <Route path='/products' component={HomeScreen} exact />
-          <Route path='/about' component={About} />
-          <Route path='/contact' component={Contact} />
-          <Route path='/product/:id' component={Product} />
-          <Route path='/cart/:id?' component={Cart} />
-          <Route path='/register' component={Register} />
-          <Route path='/login' component={Login} />
-          <Route path='/profile' component={Profile} />
-          <Route path='/shipping' component={Shipping} />
-          <Route path='/payment' component={Payment} />
-          <Route path='/order' component={OrderAdd} />
-          <Route path='/orders/:id' component={Order} />
-          <Route path='/admin/users' component={Users} />
-          <Route path='/admin/user/:id/edit' component={UserEdit} />
-          <Route path='/admin/products' component={Products} />
-          <Route path='/admin/product/:id/edit' component={ProductEdit} />
-          <Route path='/admin/product/create' component={ProductCreate} />
-          <Route path='/admin/orders' component={Orders} />
-        </Container>
-      </main>
-      <Footer />
-    </Router>
+    <h1
+      style={{
+        width: '100vw',
+        textAlign: 'center',
+        marginTop: '50vh',
+        transform: 'translateY(-50%)'
+      }}
+    >
+      Site Temporarily unavailable
+    </h1>
+    // <Router>
+    //   <Header />
+    //   <main className='py-3'>
+    //     <Container>
+    //       <Route path='/' component={ProductCarousel} exact />
+    //       <Route path='/products' component={HomeScreen} exact />
+    //       <Route path='/about' component={About} />
+    //       <Route path='/contact' component={Contact} />
+    //       <Route path='/product/:id' component={Product} />
+    //       <Route path='/cart/:id?' component={Cart} />
+    //       <Route path='/register' component={Register} />
+    //       <Route path='/login' component={Login} />
+    //       <Route path='/profile' component={Profile} />
+    //       <Route path='/shipping' component={Shipping} />
+    //       <Route path='/payment' component={Payment} />
+    //       <Route path='/order' component={OrderAdd} />
+    //       <Route path='/orders/:id' component={Order} />
+    //       <Route path='/admin/users' component={Users} />
+    //       <Route path='/admin/user/:id/edit' component={UserEdit} />
+    //       <Route path='/admin/products' component={Products} />
+    //       <Route path='/admin/product/:id/edit' component={ProductEdit} />
+    //       <Route path='/admin/product/create' component={ProductCreate} />
+    //       <Route path='/admin/orders' component={Orders} />
+    //     </Container>
+    //   </main>
+    //   <Footer />
+    // </Router>
   );
 }
 
