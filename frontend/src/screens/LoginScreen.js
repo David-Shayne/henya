@@ -79,7 +79,7 @@ const LoginScreen = ({ location, history }) => {
         type='submit'
         variant='primary'
         className='mb-3'
-        onClick={() => dispatch(login('guest@henya.org', 'guest123'))}
+        onClick={() => dispatch(login('N/A', 'guest123'))}
       >
         Continue as guest
       </Button>

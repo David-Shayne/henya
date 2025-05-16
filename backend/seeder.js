@@ -1,4 +1,3 @@
-import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import 'colors';
 import users from './data/users.js';
@@ -54,7 +53,7 @@ const destroyData = async (type) => {
 };
 
 if (process.argv[2] === '-d') {
-  destroyData('orders');
+  destroyData('all');
 }
 
 if (process.argv[2] === '-i') {
